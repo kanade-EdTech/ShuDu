@@ -48,7 +48,7 @@ for (const target of targets) {
   let html = await readFile(htmlPath, 'utf8');
   html = html.replace('<html lang="zh-CN">', '<html lang="zh-CN" data-platform="' + target + '">');
   if (target === 'xhs') {
-    html = html.replace('  <script src="./audio-library.js"></script>\n', '');
+    html = html.replace(/^[ \t]*<script src="\.\/audio-library\.js"><\/script>\r?\n/gm, '');
     html = html.replace(/        <section class="card user-music-panel"[\s\S]*?<\/section>/, '<p class="prototype-note">当前平台仅支持内置 BGM</p>');
   }
   await writeFile(htmlPath, html, 'utf8');
