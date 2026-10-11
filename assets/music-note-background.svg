@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="820" viewBox="0 0 430 820" role="img" aria-labelledby="title desc">
+  <title id="title">66CCFF 经典音符背景图案</title>
+  <desc id="desc">Canva 概念延展版：以天空蓝音符和五线谱环绕边缘，配合薄荷、紫色、粉色与黄色圆形，中央保持清爽留白。</desc>
+
+  <!-- 保留圆形视觉母题；辅助色只作为低透明度点缀。 -->
+  <circle cx="-28" cy="120" r="112" fill="#66ffcc" opacity="0.22" />
+  <circle cx="438" cy="210" r="102" fill="#cc66ff" opacity="0.16" />
+  <circle cx="46" cy="690" r="74" fill="#ffcc66" opacity="0.15" />
+  <circle cx="414" cy="658" r="92" fill="#ff66cc" opacity="0.11" />
+  <circle cx="322" cy="84" r="28" fill="#ccff66" opacity="0.14" />
+
+  <!-- 轻量五线谱。 -->
+  <g fill="none" stroke="#66ccff" stroke-width="2" opacity="0.10">
+    <path d="M-42 292 C4 278 24 278 76 284" />
+    <path d="M-42 301 C4 287 24 287 76 293" />
+    <path d="M-42 310 C4 296 24 296 76 302" />
+    <path d="M-42 319 C4 305 24 305 76 311" />
+    <path d="M-42 328 C4 314 24 314 76 320" />
+  </g>
+  <g fill="none" stroke="#66ccff" stroke-width="2" opacity="0.10">
+    <path d="M-8 566 C126 540 255 590 452 552" />
+    <path d="M-8 575 C126 549 255 599 452 561" />
+    <path d="M-8 584 C126 558 255 608 452 570" />
+    <path d="M-8 593 C126 567 255 617 452 579" />
+    <path d="M-8 602 C126 576 255 626 452 588" />
+  </g>
+
+  <!-- 经典八分音符：主体统一使用 #66CCFF。 -->
+  <g fill="#66ccff" opacity="0.29" transform="translate(38 192) rotate(-12)">
+    <ellipse cx="0" cy="38" rx="13" ry="9" transform="rotate(-16 0 38)" />
+    <rect x="9" y="-28" width="5" height="66" rx="2.5" />
+    <path d="M13 -28 C37 -21 40 -4 30 10 C31 -3 24 -10 13 -12 Z" />
+  </g>
+  <g fill="#66ccff" opacity="0.23" transform="translate(394 360) rotate(10)">
+    <ellipse cx="0" cy="38" rx="13" ry="9" transform="rotate(-16 0 38)" />
+    <rect x="9" y="-28" width="5" height="66" rx="2.5" />
+    <path d="M13 -28 C37 -21 40 -4 30 10 C31 -3 24 -10 13 -12 Z" />
+  </g>
+  <g fill="#66ccff" opacity="0.24" transform="translate(90 756) rotate(-8)">
+    <ellipse cx="0" cy="30" rx="11" ry="8" transform="rotate(-16 0 30)" />
+    <rect x="8" y="-25" width="5" height="56" rx="2.5" />
+    <path d="M12 -25 C33 -19 35 -4 27 8 C27 -2 21 -8 12 -10 Z" />
+  </g>
+
+  <!-- 连音符与小音符，形成疏密变化。 -->
+  <g fill="#66ccff" opacity="0.30" transform="translate(286 154) rotate(7)">
+    <ellipse cx="0" cy="54" rx="12" ry="8" transform="rotate(-12 0 54)" />
+    <ellipse cx="48" cy="45" rx="12" ry="8" transform="rotate(-12 48 45)" />
+    <rect x="8" y="0" width="5" height="54" rx="2.5" />
+    <rect x="56" y="-9" width="5" height="54" rx="2.5" />
+    <path d="M11 0 L60 -9 L60 3 L11 12 Z" />
+  </g>
+  <g fill="#66ccff" opacity="0.19" transform="translate(26 510) rotate(-10)">
+    <ellipse cx="0" cy="54" rx="12" ry="8" transform="rotate(-12 0 54)" />
+    <ellipse cx="48" cy="45" rx="12" ry="8" transform="rotate(-12 48 45)" />
+    <rect x="8" y="0" width="5" height="54" rx="2.5" />
+    <rect x="56" y="-9" width="5" height="54" rx="2.5" />
+    <path d="M11 0 L60 -9 L60 3 L11 12 Z" />
+  </g>
+
+  <g fill="#cc66ff" opacity="0.16" transform="translate(378 506) rotate(12)">
+    <ellipse cx="0" cy="26" rx="8" ry="6" />
+    <rect x="6" y="-14" width="4" height="40" rx="2" />
+    <path d="M9 -14 C23 -10 26 -1 20 8 C20 1 16 -3 9 -4 Z" />
+  </g>
+  <g fill="#ff66cc" opacity="0.13" transform="translate(212 92) rotate(-8)">
+    <ellipse cx="0" cy="26" rx="8" ry="6" />
+    <rect x="6" y="-14" width="4" height="40" rx="2" />
+    <path d="M9 -14 C23 -10 26 -1 20 8 C20 1 16 -3 9 -4 Z" />
+  </g>
+
+  <!-- 节拍圆点。 -->
+  <g fill="#66ccff" opacity="0.25">
+    <circle cx="74" cy="72" r="5" />
+    <circle cx="96" cy="60" r="3" />
+    <circle cx="354" cy="720" r="5" />
+    <circle cx="376" cy="736" r="3" />
+    <circle cx="240" cy="650" r="4" />
+  </g>
+</svg>

@@ -1,0 +1,3 @@
+[submodule "sudoku-exchange-puzzle-bank"]
+	path = sudoku-exchange-puzzle-bank
+	url = https://github.com/grantm/sudoku-exchange-puzzle-bank.git

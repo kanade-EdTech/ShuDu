@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>虚拟歌手数独 · 66CCFF 音符版 V2</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <input class="mode-radio" type="radio" name="game-mode" id="mode-simple" checked />
+  <input class="mode-radio" type="radio" name="game-mode" id="mode-hard" />
+
+  <main class="stage">
+    <section class="app-shell" aria-label="虚拟歌手数独游戏">
+      <header class="topbar">
+        <div class="brand-mark" aria-hidden="true">♪</div>
+        <div class="brand-copy">
+          <h1>虚拟歌手数独</h1>
+          <p><span class="simple-only">简易演出 · 4×4</span><span class="hard-only">高难舞台 · 9×9</span><span class="concept-chip">NOTE V2</span></p>
+        </div>
+        <div class="header-actions" aria-label="快捷操作">
+          <button class="icon-button music-shortcut" type="button" aria-label="背景音乐">♫</button>
+          <button class="icon-button" type="button" aria-label="暂停，后续开放" disabled>Ⅱ</button>
+        </div>
+      </header>
+
+      <div class="content">
+        <div class="save-notice">
+          <span class="notice-dot" aria-hidden="true"></span>
+          <span>已恢复上次进度 · 每一步都会自动保存</span>
+        </div>
+
+        <section class="card game-card" aria-labelledby="board-title">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="eyebrow">LIVE STAGE</p>
+              <h2 id="board-title"><span class="simple-only">暖场挑战</span><span class="hard-only">九人主舞台</span></h2>
+            </div>
+            <div class="timer" aria-label="游戏时间 00:00">◷ 00:00</div>
+          </div>
+
+          <div class="simple-view">
+            <div class="board board-4" role="grid" aria-label="4乘4虚拟歌手数独棋盘">
+              <div class="cell given" role="gridcell" aria-label="角色1，预置"><span class="cell-inner"><span class="portrait char-1"></span></span></div>
+              <div class="cell related br" role="gridcell" aria-label="空格"><span class="cell-inner"></span></div>
+              <div class="cell given" role="gridcell" aria-label="角色3，预置"><span class="cell-inner"><span class="portrait char-3"></span></span></div>
+              <div class="cell given" role="gridcell" aria-label="角色4，预置"><span class="cell-inner"><span class="portrait char-4"></span></span></div>
+
+              <div class="cell given" role="gridcell" aria-label="角色3，预置"><span class="cell-inner"><span class="portrait char-3"></span></span></div>
+              <div class="cell player br selected" role="gridcell" aria-label="角色4，玩家填入，当前选中"><span class="cell-inner"><span class="portrait char-4"></span></span></div>
+              <div class="cell related" role="gridcell" aria-label="空格"><span class="cell-inner"></span></div>
+              <div class="cell given" role="gridcell" aria-label="角色2，预置"><span class="cell-inner"><span class="portrait char-2"></span></span></div>
+
+              <div class="cell related bt" role="gridcell" aria-label="空格"><span class="cell-inner"></span></div>
+              <div class="cell given br bt" role="gridcell" aria-label="角色1，预置"><span class="cell-inner"><span class="portrait char-1"></span></span></div>
+              <div class="cell given bt" role="gridcell" aria-label="角色4，预置"><span class="cell-inner"><span class="portrait char-4"></span></span></div>
+              <div class="cell player bt conflict" role="gridcell" aria-label="角色3，玩家填入，冲突"><span class="cell-inner"><span class="portrait char-3"></span></span></div>
+
+              <div class="cell given" role="gridcell" aria-label="角色4，预置"><span class="cell-inner"><span class="portrait char-4"></span></span></div>
+              <div class="cell given br" role="gridcell" aria-label="角色3，预置"><span class="cell-inner"><span class="portrait char-3"></span></span></div>
+              <div class="cell given" role="gridcell" aria-label="角色2，预置"><span class="cell-inner"><span class="portrait char-2"></span></span></div>
+              <div class="cell" role="gridcell" aria-label="空格"><span class="cell-inner"></span></div>
+            </div>
+          </div>
+
+          <div class="hard-view">
+            <div class="difficulty-tabs" aria-label="9乘9题目难度">
+              <button class="difficulty-button" type="button" data-difficulty="easy" aria-pressed="false"><strong>简单</strong><small>easy.txt</small></button>
+              <button class="difficulty-button" type="button" data-difficulty="medium" aria-pressed="false"><strong>中等</strong><small>medium.txt</small></button>
+              <button class="difficulty-button active" type="button" data-difficulty="hard" aria-pressed="true"><strong>困难</strong><small>hard.txt</small></button>
+              <button class="difficulty-button" type="button" data-difficulty="diabolical" aria-pressed="false"><strong>魔鬼</strong><small>diabolical.txt</small></button>
+            </div>
+            <div class="board board-9" role="grid" aria-label="9乘9虚拟歌手数独棋盘">
+              <div class="cell given"><span class="cell-inner"><span class="portrait char-1"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given br"><span class="cell-inner"><span class="portrait char-3"></span></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-4"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given br"><span class="cell-inner"><span class="portrait char-6"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-8"></span></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-9"></span></span></div>
+              <div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-5"></span></span></div><div class="cell given br"><span class="cell-inner"><span class="portrait char-6"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-8"></span></span></div><div class="cell br"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-1"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-3"></span></span></div>
+              <div class="cell given"><span class="cell-inner"><span class="portrait char-7"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell br"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-1"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given br"><span class="cell-inner"><span class="portrait char-3"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-5"></span></span></div><div class="cell"><span class="cell-inner"></span></div>
+
+              <div class="cell bt"><span class="cell-inner"></span></div><div class="cell given bt"><span class="cell-inner"><span class="portrait char-3"></span></span></div><div class="cell given br bt"><span class="cell-inner"><span class="portrait char-4"></span></span></div><div class="cell bt"><span class="cell-inner"></span></div><div class="cell given bt"><span class="cell-inner"><span class="portrait char-6"></span></span></div><div class="cell br bt"><span class="cell-inner"></span></div><div class="cell given bt"><span class="cell-inner"><span class="portrait char-8"></span></span></div><div class="cell bt"><span class="cell-inner"></span></div><div class="cell given bt"><span class="cell-inner"><span class="portrait char-1"></span></span></div>
+              <div class="cell given"><span class="cell-inner"><span class="portrait char-5"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given br"><span class="cell-inner"><span class="portrait char-7"></span></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-8"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given br"><span class="cell-inner"><span class="portrait char-1"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-3"></span></span></div><div class="cell"><span class="cell-inner"></span></div>
+              <div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-9"></span></span></div><div class="cell br"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-2"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given br"><span class="cell-inner"><span class="portrait char-4"></span></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-5"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-7"></span></span></div>
+
+              <div class="cell given bt"><span class="cell-inner"><span class="portrait char-3"></span></span></div><div class="cell bt"><span class="cell-inner"></span></div><div class="cell given br bt"><span class="cell-inner"><span class="portrait char-5"></span></span></div><div class="cell bt"><span class="cell-inner"></span></div><div class="cell given bt"><span class="cell-inner"><span class="portrait char-7"></span></span></div><div class="cell br bt"><span class="cell-inner"></span></div><div class="cell player selected bt"><span class="cell-inner"><span class="portrait char-9"></span></span></div><div class="cell given bt"><span class="cell-inner"><span class="portrait char-1"></span></span></div><div class="cell bt"><span class="cell-inner"></span></div>
+              <div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-7"></span></span></div><div class="cell br"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-9"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given br"><span class="cell-inner"><span class="portrait char-2"></span></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-3"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-5"></span></span></div>
+              <div class="cell given"><span class="cell-inner"><span class="portrait char-9"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given br"><span class="cell-inner"><span class="portrait char-2"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-4"></span></span></div><div class="cell br"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-6"></span></span></div><div class="cell"><span class="cell-inner"></span></div><div class="cell given"><span class="cell-inner"><span class="portrait char-8"></span></span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card selector-card" aria-labelledby="selector-title">
+          <div class="section-head">
+            <div class="section-title">
+              <p class="eyebrow">VOCAL SELECT</p>
+              <h2 id="selector-title">选择要填入的歌手</h2>
+            </div>
+            <button class="mini-link avatar-manager-open" type="button">＋ 管理头像</button>
+          </div>
+
+          <div class="simple-view">
+            <div class="candidate-grid four">
+              <button class="candidate active" type="button" aria-label="1号洛天依"><span class="candidate-avatar"><span class="portrait char-1"></span><b class="number-badge">1</b></span><small class="role-name">洛天依</small></button>
+              <button class="candidate" type="button" aria-label="2号乐正绫"><span class="candidate-avatar"><span class="portrait char-2"></span><b class="number-badge">2</b></span><small class="role-name">乐正绫</small></button>
+              <button class="candidate" type="button" aria-label="3号星尘"><span class="candidate-avatar"><span class="portrait char-3"></span><b class="number-badge">3</b></span><small class="role-name">星尘</small></button>
+              <button class="candidate" type="button" aria-label="4号言和"><span class="candidate-avatar"><span class="portrait char-4"></span><b class="number-badge">4</b></span><small class="role-name">言和</small></button>
+            </div>
+          </div>
+
+          <div class="hard-view">
+            <div class="candidate-grid nine">
+              <button class="candidate" type="button"><span class="candidate-avatar"><span class="portrait char-1"></span><b class="number-badge">1</b></span><small>剩 4</small></button>
+              <button class="candidate" type="button"><span class="candidate-avatar"><span class="portrait char-2"></span><b class="number-badge">2</b></span><small>剩 5</small></button>
+              <button class="candidate" type="button"><span class="candidate-avatar"><span class="portrait char-3"></span><b class="number-badge">3</b></span><small>剩 3</small></button>
+              <button class="candidate" type="button"><span class="candidate-avatar"><span class="portrait char-4"></span><b class="number-badge">4</b></span><small>剩 6</small></button>
+              <button class="candidate" type="button"><span class="candidate-avatar"><span class="portrait char-5"></span><b class="number-badge">5</b></span><small>剩 4</small></button>
+              <button class="candidate" type="button"><span class="candidate-avatar"><span class="portrait char-6"></span><b class="number-badge">6</b></span><small>剩 5</small></button>
+              <button class="candidate active" type="button"><span class="candidate-avatar"><span class="portrait char-7"></span><b class="number-badge">7</b></span><small>剩 4</small></button>
+              <button class="candidate" type="button"><span class="candidate-avatar"><span class="portrait char-8"></span><b class="number-badge">8</b></span><small>剩 5</small></button>
+              <button class="candidate" type="button"><span class="candidate-avatar"><span class="portrait char-9"></span><b class="number-badge">9</b></span><small>剩 4</small></button>
+            </div>
+          </div>
+
+          <div class="tool-row" aria-label="棋盘工具">
+            <button class="tool-button" type="button"><span>↶</span>撤销</button>
+            <button class="tool-button" type="button"><span>⌫</span>清除</button>
+            <button class="tool-button" type="button"><span>＋</span>新一局</button>
+          </div>
+        </section>
+
+        <section class="card music-card" aria-label="背景音乐控制">
+          <div class="album-art" aria-hidden="true">♫</div>
+          <div class="music-copy">
+            <strong>上山岗</strong>
+            <span>ilem / 洛天依Official · 内置 BGM</span>
+          </div>
+          <div class="music-actions">
+            <button class="music-previous" type="button" aria-label="上一首">◀</button>
+            <button class="play music-play" type="button" aria-label="播放">▶</button>
+            <button class="music-next" type="button" aria-label="下一首">▶</button>
+          </div>
+          <label class="volume-control">音量<input class="music-volume" type="range" min="0" max="100" value="35" /></label>
+        </section>
+
+        <section class="card user-music-panel" hidden aria-label="自定义音乐">
+          <button class="audio-import mini-link" type="button">＋ 导入本地 BGM</button>
+          <p class="audio-status media-status" role="status">最多 5 首，每首不超过 8 MiB，仅保存在本机。</p>
+          <div class="audio-track-list"></div>
+          <input class="audio-file-input" type="file" accept="audio/*" hidden />
+        </section>
+        <p class="prototype-note">M4 媒体版 · 头像可裁切替换，内置 BGM 可播放、切歌并记忆音量</p>
+      </div>
+
+      <footer class="bottom-dock">
+        <div class="mode-switch" aria-label="游戏模式">
+          <label class="mode-option simple" for="mode-simple" tabindex="0">
+            <strong>简易模式</strong>
+            <span>4×4 · 四人舞台</span>
+          </label>
+          <label class="mode-option hard" for="mode-hard" tabindex="0">
+            <strong>高难模式</strong>
+            <span>9×9 · 九人主舞台</span>
+          </label>
+        </div>
+      </footer>
+    </section>
+  </main>
+  <section class="modal-backdrop avatar-modal" hidden aria-hidden="true" aria-labelledby="avatar-modal-title">
+    <div class="modal-sheet" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <div><p class="eyebrow">ICON STUDIO</p><h2 id="avatar-modal-title">角色头像</h2></div>
+        <button class="modal-close" type="button" aria-label="关闭头像管理">×</button>
+      </div>
+      <div class="icon-mode-tabs" aria-label="头像配置组">
+        <button type="button" data-icon-mode="simple" class="active">4 人版</button>
+        <button type="button" data-icon-mode="hard">9 人版</button>
+      </div>
+      <p class="media-status" role="status">点击槽位上传图片；使用箭头调整角色顺序。</p>
+      <div class="icon-slot-grid"></div>
+      <div class="crop-editor" hidden>
+        <div class="crop-preview"><img alt="待裁切头像预览" /></div>
+        <label>缩放<input class="crop-zoom" type="range" min="100" max="220" value="100" /></label>
+        <label>水平<input class="crop-x" type="range" min="-100" max="100" value="0" /></label>
+        <label>垂直<input class="crop-y" type="range" min="-100" max="100" value="0" /></label>
+        <div class="modal-actions"><button class="crop-cancel" type="button">取消</button><button class="crop-apply primary" type="button">应用裁切</button></div>
+      </div>
+      <div class="modal-actions avatar-actions"><button class="icons-reset" type="button">恢复本组默认</button><button class="modal-close primary" type="button">完成</button></div>
+      <input class="icon-file-input" type="file" accept="image/png,image/jpeg,image/webp" hidden />
+    </div>
+  </section>
+  <script src="./platform.js"></script>
+  <script src="./domain.js"></script>
+  <script src="./puzzle-bank-4x4.js"></script>
+  <script src="./puzzle-bank-9x9.js"></script>
+  <script src="./storage.js"></script>
+  <script src="./media.js"></script>
+  <script src="./audio-library.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

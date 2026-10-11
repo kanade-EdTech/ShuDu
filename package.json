@@ -1,0 +1,21 @@
+{
+  "name": "vocal-singer-sudoku",
+  "version": "0.9.0",
+  "private": true,
+  "description": "Offline virtual singer themed Sudoku for Bilibili Toy and Xiaohongshu MiniTool.",
+  "scripts": {
+    "bank:4x4": "node scripts/build-4x4-bank.mjs",
+    "bank:9x9": "node scripts/build-9x9-bank.mjs",
+    "bank:read": "node scripts/read-9x9-puzzle.mjs",
+    "bank": "npm run bank:4x4 && npm run bank:9x9",
+    "test": "npm run bank && node --test tests/*.test.mjs",
+    "build": "npm run bank && node scripts/build.mjs",
+    "verify": "node scripts/verify-build.mjs dist/toy && node scripts/verify-build.mjs dist/xhs",
+    "check": "npm run test && npm run build && npm run verify",
+    "package": "npm run build && npm run verify && powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1",
+    "preview:platform": "node scripts/preview-platform.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

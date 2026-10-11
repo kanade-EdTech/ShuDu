@@ -1,0 +1,15 @@
+{
+  "source": "grid-4_diff-25_placeholder-__enforce-non_unique.jsonl",
+  "totalRecords": 100,
+  "acceptedUnique": 100,
+  "declaredNonUnique": 100,
+  "rejected": {
+    "duplicate": 0,
+    "noSolution": 0,
+    "multipleSolutions": 0
+  },
+  "clueRange": [
+    12,
+    14
+  ]
+}

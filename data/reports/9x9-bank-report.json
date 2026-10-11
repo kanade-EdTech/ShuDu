@@ -1,0 +1,110 @@
+{
+  "source": "sudoku-exchange-puzzle-bank",
+  "license": "Unlicense / public domain",
+  "strategy": "source-file-owned difficulty banks, fixed-seed reservoir sampling, then independent unique-solution validation",
+  "sources": [
+    {
+      "file": "easy.txt",
+      "bucket": "easy",
+      "label": "简单",
+      "totalRecords": 100000,
+      "selected": 1000,
+      "acceptedUnique": 1000,
+      "seed": "0x66ccff01",
+      "rejected": {
+        "duplicate": 0,
+        "noSolution": 0,
+        "multipleSolutions": 0
+      },
+      "clueRange": [
+        22,
+        40
+      ],
+      "ratingRange": [
+        1.2,
+        1.2
+      ]
+    },
+    {
+      "file": "medium.txt",
+      "bucket": "medium",
+      "label": "中等",
+      "totalRecords": 352643,
+      "selected": 1000,
+      "acceptedUnique": 1000,
+      "seed": "0x66ccff05",
+      "rejected": {
+        "duplicate": 0,
+        "noSolution": 0,
+        "multipleSolutions": 0
+      },
+      "clueRange": [
+        22,
+        36
+      ],
+      "ratingRange": [
+        1.5,
+        2.3
+      ]
+    },
+    {
+      "file": "hard.txt",
+      "bucket": "hard",
+      "label": "困难",
+      "totalRecords": 321592,
+      "selected": 1000,
+      "acceptedUnique": 1000,
+      "seed": "0x66ccff09",
+      "rejected": {
+        "duplicate": 0,
+        "noSolution": 0,
+        "multipleSolutions": 0
+      },
+      "clueRange": [
+        23,
+        36
+      ],
+      "ratingRange": [
+        2.5,
+        4.7
+      ]
+    },
+    {
+      "file": "diabolical.txt",
+      "bucket": "diabolical",
+      "label": "魔鬼",
+      "totalRecords": 119681,
+      "selected": 1000,
+      "acceptedUnique": 1000,
+      "seed": "0xcc66ff09",
+      "rejected": {
+        "duplicate": 0,
+        "noSolution": 0,
+        "multipleSolutions": 0
+      },
+      "clueRange": [
+        22,
+        33
+      ],
+      "ratingRange": [
+        5,
+        9.1
+      ]
+    }
+  ],
+  "sampledRecords": 4000,
+  "acceptedUnique": 4000,
+  "rejected": {
+    "duplicate": 0,
+    "noSolution": 0,
+    "multipleSolutions": 0
+  },
+  "clueRange": [
+    22,
+    40
+  ],
+  "ratingRange": [
+    1.2,
+    9.1
+  ]
+}
